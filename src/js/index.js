@@ -27,6 +27,7 @@ function updateSelect(data) {
       new SlimSelect({
         select: breedSelector,
       });
+      breedSelector.classList.remove('is-hidden');
     })
     .catch(onFetchError);
 }
@@ -51,7 +52,7 @@ function createMarkUp(event) {
 }
 
 function onFetchError() {
-  breedSelector.classList.remove('is-hidden');
+  // breedSelector.classList.remove('is-hidden');
   loaderEl.classList.replace('loader', 'is-hidden');
 
   Notify.failure(
